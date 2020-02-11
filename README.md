@@ -40,8 +40,8 @@ docker pull xldou/yapi-docker
     }
     ```
 
-* 在环境变量`VERSION`中可指定yapi发布的任意版本
+* 升级版本提示：只要`yapi`官方数据库结构不变，你的`mongo`库还在，`init.lock`文件有，那就放心更新版本，本库也会跟着`yapi`版本发布新的版本，谢谢使用
 
-* 日志文件`/api/vendors/log`,如需保存日志文件请挂载到外部
+* 日志文件夹`/api/vendors/log`,如需保存日志文件请挂载到外部
 
 * 如有疑问或者见解请联系[github/xldou](https://github.com/xldou-cn/yapi-docker/issues)
