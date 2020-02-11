@@ -1,16 +1,16 @@
 FROM node:8
 
-RUN apt-get install -y  git python make openssl tar gcc
-ENV TZ="Asia/Shanghai" HOME="/" VERSION=1.8.7
+ENV TZ="Asia/Shanghai" HOME="/" VERSION=v1.8.7
 
 RUN mkdir /api
-RUN wget -O /api/yapi.tgz http://registry.npm.taobao.org/yapi-vendor/download/yapi-vendor-$VERSION.tgz
+RUN wget -O /api/yapi.tgz https://codeload.github.com/YMFE/yapi/tar.gz/$VERSION
 
 RUN tar zxvf /api/yapi.tgz  && mv /package /api/vendors 
+RUN rm -rf /api/yapi.tgz
+
 RUN cd /api/vendors && \
     npm install --production
 
-RUN rm -f /api/yapi.tgz
 COPY entrypoint.sh /api/
 RUN chmod 755 /api/entrypoint.sh
 
