@@ -8,7 +8,7 @@ RUN wget -O /api/yapi.tgz http://registry.npm.taobao.org/yapi-vendor/download/ya
 
 RUN tar zxvf /api/yapi.tgz  && mv /package /api/vendors 
 RUN cd /api/vendors && \
-    npm install --production --registry https://registry.npm.taobao.org 
+    npm install --production
 
 RUN rm -f /api/yapi.tgz
 COPY entrypoint.sh /api/
