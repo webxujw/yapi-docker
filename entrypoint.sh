@@ -1,9 +1,9 @@
 #!/bin/bash
 
 cd  /api/vendors
-if [ ! -e "init.lock" ]
+cp /yapi/config.json /api/
+if [ ! -e "/yapi/init.lock" ]
 then
-    cp /yapi/config.json /api/
     npm run install-server
     touch /yapi/init.lock
 fi
