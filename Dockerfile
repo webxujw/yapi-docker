@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:8.17-slim
 
 ENV TZ="Asia/Shanghai" HOME="/" VERSION=1.8.7
 
