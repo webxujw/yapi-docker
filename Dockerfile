@@ -1,11 +1,11 @@
 FROM node:8
 
-ENV TZ="Asia/Shanghai" HOME="/" VERSION=v1.8.7
+ENV TZ="Asia/Shanghai" HOME="/" VERSION=1.8.7
 
 RUN mkdir /api
-RUN wget -O /api/yapi.tgz https://codeload.github.com/YMFE/yapi/tar.gz/$VERSION
+RUN wget -O /api/yapi.tgz https://codeload.github.com/YMFE/yapi/tar.gz/v${VERSION}
 
-RUN tar zxvf /api/yapi.tgz  && mv /package /api/vendors 
+RUN tar zxvf /api/yapi.tgz  && mv /yapi-$VERSION /api/vendors 
 RUN rm -rf /api/yapi.tgz
 
 RUN cd /api/vendors && \
