@@ -1,6 +1,6 @@
 FROM node:8.17-slim
 
-ENV TZ="Asia/Shanghai" HOME="/" VERSION=1.8.7
+ENV TZ="Asia/Shanghai" HOME="/" VERSION=1.9.2
 
 RUN mkdir /api
 RUN wget -O /api/yapi.tgz https://codeload.github.com/YMFE/yapi/tar.gz/v${VERSION}
